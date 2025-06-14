@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -20,7 +20,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend service
     toast.success("Message sent successfully! I'll get back to you soon.");
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -50,7 +49,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600">karthikeyan.dev@gmail.com</p>
+                  <p className="text-gray-600">karthisenthil026@gmail.com</p>
                 </div>
               </div>
               
@@ -60,7 +59,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Phone</h4>
-                  <p className="text-gray-600">+91 98765 43210</p>
+                  <p className="text-gray-600">+91 8939533725</p>
                 </div>
               </div>
               
@@ -70,7 +69,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Location</h4>
-                  <p className="text-gray-600">Chennai, Tamil Nadu, India</p>
+                  <p className="text-gray-600">Tamil Nadu, India</p>
                 </div>
               </div>
             </div>
@@ -79,22 +78,20 @@ const Contact = () => {
               <h4 className="font-semibold text-gray-900 mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 <a 
-                  href="https://github.com/karthikeyans" 
+                  href="https://github.com/Karthikeyan-S26" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 text-white rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
                 >
                   <Github size={20} />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/karthikeyans" 
+                  href="https://www.linkedin.com/in/karthikeyan-s-tech" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
                 >
                   <Linkedin size={20} />
-                </a>
-                <a 
-                  href="https://twitter.com/karthikeyans" 
-                  className="w-10 h-10 bg-blue-400 text-white rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors"
-                >
-                  <Twitter size={20} />
                 </a>
               </div>
             </div>

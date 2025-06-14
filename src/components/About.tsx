@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Code, Lightbulb, Target } from 'lucide-react';
+import { Code, Lightbulb, Target, GraduationCap, Briefcase } from 'lucide-react';
 
 const About = () => {
   return (
@@ -16,12 +16,13 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              I'm Karthikeyan S, a passionate Full Stack Developer with expertise in modern web technologies. 
-              I specialize in creating robust, scalable applications using React, Node.js, and cloud technologies.
+              I'm Karthikeyan S, a passionate Full Stack Developer currently pursuing B.Tech in Information Technology 
+              at Kongunadu College of Engineering and Technology. I specialize in creating robust, scalable web applications 
+              using modern technologies like React.js, Node.js, and various databases.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              With a strong foundation in both frontend and backend development, I enjoy solving complex 
-              problems and turning ideas into reality through clean, efficient code.
+              With hands-on experience from internships and participation in hackathons like SIH 2024 and HackIndia 2025, 
+              I enjoy solving complex problems and turning innovative ideas into reality through clean, efficient code.
             </p>
             
             <div className="grid md:grid-cols-3 gap-6">
@@ -45,25 +46,40 @@ const About = () => {
             </div>
           </div>
           
-          <div className="relative">
+          <div className="space-y-6">
             <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Quick Facts</h3>
+              <div className="flex items-center gap-3 mb-6">
+                <GraduationCap className="w-6 h-6" />
+                <h3 className="text-2xl font-bold">Education</h3>
+              </div>
               <div className="space-y-4">
-                <div className="flex justify-between">
-                  <span>Experience</span>
-                  <span className="font-semibold">3+ Years</span>
+                <div>
+                  <h4 className="font-semibold">B.Tech Information Technology</h4>
+                  <p className="text-blue-100">Kongunadu College of Engineering and Technology</p>
+                  <p className="text-blue-200 text-sm">2023 – 2027</p>
                 </div>
-                <div className="flex justify-between">
-                  <span>Projects Completed</span>
-                  <span className="font-semibold">25+</span>
+                <div>
+                  <h4 className="font-semibold">Higher Secondary</h4>
+                  <p className="text-blue-100">KSV Higher Secondary School</p>
                 </div>
-                <div className="flex justify-between">
-                  <span>Technologies</span>
-                  <span className="font-semibold">15+</span>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-8 text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <Briefcase className="w-6 h-6" />
+                <h3 className="text-2xl font-bold">Experience</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold">Front-End Developer</h4>
+                  <p className="text-green-100">Micro IT</p>
+                  <p className="text-green-200 text-sm">May 10 - June 5, 2025</p>
                 </div>
-                <div className="flex justify-between">
-                  <span>Coffee Consumed</span>
-                  <span className="font-semibold">∞</span>
+                <div>
+                  <h4 className="font-semibold">Web Developer</h4>
+                  <p className="text-green-100">Media Wave Technology</p>
+                  <p className="text-green-200 text-sm">June 2 - June 18, 2025</p>
                 </div>
               </div>
             </div>

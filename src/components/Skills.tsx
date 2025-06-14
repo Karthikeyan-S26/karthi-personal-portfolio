@@ -6,34 +6,30 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "JavaScript", level: 90 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "Tailwind CSS", level: 88 },
-        { name: "Next.js", level: 80 }
+        { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" }
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "Python", level: 75 },
-        { name: "MongoDB", level: 82 },
-        { name: "PostgreSQL", level: 78 },
-        { name: "REST APIs", level: 90 }
+        { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
       ]
     },
     {
-      title: "Tools & Others",
+      title: "Programming & Tools",
       skills: [
-        { name: "Git", level: 88 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 72 },
-        { name: "Firebase", level: 80 },
-        { name: "Linux", level: 75 },
-        { name: "Figma", level: 65 }
+        { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+        { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "C", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" }
       ]
     }
   ];
@@ -43,7 +39,7 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Skills & Expertise
+            Skills & Technologies
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -54,22 +50,31 @@ const Skills = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
                 {category.title}
               </h3>
-              <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-blue-600 font-semibold">{skill.level}%</span>
+                  <div key={skillIndex} className="flex flex-col items-center group">
+                    <div className="w-16 h-16 mb-3 flex items-center justify-center bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors">
+                      <img 
+                        src={skill.logo} 
+                        alt={skill.name}
+                        className="w-10 h-10 object-contain"
+                        onError={(e) => {
+                          // Fallback to a simple colored div if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<div class="w-10 h-10 bg-blue-500 rounded flex items-center justify-center text-white text-xs font-bold">${skill.name.charAt(0)}</div>`;
+                          }
+                        }}
+                      />
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                    <span className="text-sm font-medium text-gray-700 text-center">
+                      {skill.name}
+                    </span>
                   </div>
                 ))}
               </div>
