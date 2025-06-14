@@ -3,11 +3,9 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { toast } from "@/components/ui/use-toast";
 
-// Instead of using a static image, capture the visible resume content
 export const useResumePDF = () => {
   const generatePDF = async () => {
     try {
-      // Get the DOM node of the main resume box
       const resumeNode = document.querySelector(".max-w-6xl.bg-white");
       if (!resumeNode) {
         toast({
@@ -18,7 +16,7 @@ export const useResumePDF = () => {
         return;
       }
 
-      // Render DOM node to canvas as an image (with high DPI)
+      // Render DOM node to canvas
       const canvas = await html2canvas(resumeNode as HTMLElement, {
         scale: 2,
         backgroundColor: "#fff",
@@ -36,66 +34,28 @@ export const useResumePDF = () => {
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
 
-      // Image stats
-      const imgWidth = pageWidth;
-      const imgHeight = (canvas.height * pageWidth) / canvas.width;
+      // Calculate scaling to fit the entire canvas in one page
+      const canvasAspect = canvas.width / canvas.height;
+      const pageAspect = pageWidth / pageHeight;
 
-      let remainingHeight = imgHeight;
-      let positionY = 0;
+      let renderWidth = pageWidth;
+      let renderHeight = pageHeight;
+      let x = 0;
+      let y = 0;
 
-      // If resume fits on one page
-      if (imgHeight <= pageHeight) {
-        let y = (pageHeight - imgHeight) / 2;
-        pdf.addImage(imgData, "PNG", 0, y, imgWidth, imgHeight);
+      if (canvasAspect >= pageAspect) {
+        // Fit width
+        renderWidth = pageWidth;
+        renderHeight = (canvas.height * pageWidth) / canvas.width;
+        y = (pageHeight - renderHeight) / 2; // center vertically
       } else {
-        // Multi-page
-        let pageNum = 0;
-        // Height of one page in the image's scale
-        const pageImageHeight = (canvas.width * pageHeight) / pageWidth;
-
-        while (remainingHeight > 0) {
-          const sourceY = pageNum * pageImageHeight;
-          // Create a canvas for one page portion at a time
-          const pageCanvas = document.createElement("canvas");
-          pageCanvas.width = canvas.width;
-          pageCanvas.height = Math.min(pageImageHeight, canvas.height - sourceY);
-
-          const ctx = pageCanvas.getContext("2d");
-          if (ctx) {
-            ctx.fillStyle = "#fff";
-            ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
-            ctx.drawImage(
-              canvas,
-              0,
-              sourceY,
-              canvas.width,
-              pageCanvas.height,
-              0,
-              0,
-              canvas.width,
-              pageCanvas.height
-            );
-          }
-
-          const pageImgData = pageCanvas.toDataURL("image/png");
-
-          pdf.addImage(
-            pageImgData,
-            "PNG",
-            0,
-            0,
-            pageWidth,
-            (pageCanvas.height * pageWidth) / canvas.width
-          );
-          remainingHeight -= pageHeight;
-
-          if (remainingHeight > 0) {
-            pdf.addPage();
-          }
-          pageNum++;
-        }
+        // Fit height
+        renderHeight = pageHeight;
+        renderWidth = (canvas.width * pageHeight) / canvas.height;
+        x = (pageWidth - renderWidth) / 2; // center horizontally
       }
 
+      pdf.addImage(imgData, "PNG", x, y, renderWidth, renderHeight);
       pdf.save("Karthikeyan_S_Resume.pdf");
 
       toast({
