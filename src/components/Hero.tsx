@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronDown, Github, Linkedin, Download } from 'lucide-react';
 
@@ -68,7 +67,7 @@ const Hero = () => {
             className="px-6 md:px-8 py-2.5 md:py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300 font-medium flex items-center justify-center gap-2 text-sm md:text-base"
           >
             <Download size={16} className="md:w-5 md:h-5" />
-            View Resume
+            Download Resume
           </button>
           <a 
             href="#contact" 
