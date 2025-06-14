@@ -2,8 +2,8 @@
 import jsPDF from "jspdf";
 import { toast } from "@/components/ui/use-toast";
 
-// This is the path to your uploaded resume image
-const resumeImage = "/lovable-uploads/d5884f26-a8e0-4739-9ce5-473a12e69518.png";
+// Use the path to your newly uploaded image
+const resumeImage = "/lovable-uploads/d7fc8646-3c08-438b-a4c4-51944116fbb3.png";
 
 export const useResumePDF = () => {
   const generatePDF = async () => {
@@ -14,7 +14,7 @@ export const useResumePDF = () => {
         format: "a4",
       });
 
-      // Properly wait for the image to load with a Promise
+      // Promise to load the image
       const loadImage = (src: string) =>
         new Promise<HTMLImageElement>((resolve, reject) => {
           const img = new window.Image();
@@ -44,7 +44,7 @@ export const useResumePDF = () => {
       const y = (pageHeight - imgHeight) / 2;
 
       pdf.addImage(img, "PNG", x, y, imgWidth, imgHeight);
-      pdf.save("Karthikeyan_S_Resume.pdf");
+      pdf.save("Karthikeyan_Photo.pdf");
       toast({
         title: "Success",
         description: "PDF downloaded successfully!",
