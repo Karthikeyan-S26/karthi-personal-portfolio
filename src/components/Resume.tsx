@@ -8,438 +8,420 @@ const Resume = () => {
     const pdf = new jsPDF();
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
+    const leftSidebarWidth = 70;
+    const rightContentStart = leftSidebarWidth + 10;
     let yPos = 20;
 
     // Helper function to check if we need a new page
     const checkPageBreak = (nextSectionHeight: number) => {
       if (yPos + nextSectionHeight > pageHeight - 20) {
         pdf.addPage();
+        // Redraw sidebar background on new page
+        pdf.setFillColor(60, 60, 60);
+        pdf.rect(0, 0, leftSidebarWidth, pageHeight, 'F');
         yPos = 20;
       }
     };
 
-    // Header Section with Photo
+    // Left sidebar background
+    pdf.setFillColor(60, 60, 60);
+    pdf.rect(0, 0, leftSidebarWidth, pageHeight, 'F');
+
+    // Header - Name and Title (spans across top)
     pdf.setFillColor(255, 255, 255);
-    pdf.rect(0, 0, pageWidth, 50, 'F');
+    pdf.rect(leftSidebarWidth, 0, pageWidth - leftSidebarWidth, 40, 'F');
     
-    // Add photo placeholder (you can replace this with actual image loading)
+    // Profile photo placeholder
     pdf.setFillColor(200, 200, 200);
-    pdf.circle(40, 30, 15, 'F');
+    pdf.circle(35, 30, 15, 'F');
     
-    // Name and Title
+    // Name and Title in right area
     pdf.setTextColor(0, 0, 0);
-    pdf.setFontSize(22);
+    pdf.setFontSize(24);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('KARTHIKEYAN S', 65, 25);
+    pdf.text('KARTHIKEYAN S', rightContentStart, 25);
     
-    pdf.setFontSize(12);
+    pdf.setFontSize(14);
     pdf.setFont('helvetica', 'normal');
-    pdf.text('Full Stack Developer', 65, 35);
-    
-    // Divider line
-    pdf.setDrawColor(0, 0, 0);
-    pdf.line(65, 40, 150, 40);
-    
-    yPos = 60;
+    pdf.text('Full Stack Developer', rightContentStart, 35);
 
-    // Contact Information Section
-    pdf.setFontSize(10);
-    pdf.setFont('helvetica', 'normal');
-    const contactInfo = [
-      'Email: karthisenthil026@gmail.com',
-      'Phone: +91 8939533725',
-      'Location: Tamil Nadu, India',
-      'GitHub: github.com/Karthikeyan-S26',
-      'LinkedIn: linkedin.com/in/karthikeyan-s-tech'
-    ];
-    
-    contactInfo.forEach((info, index) => {
-      pdf.text(info, 20, yPos + (index * 6));
-    });
-    
-    yPos += 40;
+    // Left Sidebar Content
+    let sidebarY = 60;
+    pdf.setTextColor(255, 255, 255);
 
-    // Professional Summary
-    checkPageBreak(30);
+    // Contact Section
     pdf.setFontSize(14);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('PROFESSIONAL SUMMARY', 20, yPos);
-    pdf.setDrawColor(41, 128, 185);
-    pdf.line(20, yPos + 2, 80, yPos + 2);
+    pdf.text('Contact', 10, sidebarY);
+    sidebarY += 10;
     
-    yPos += 10;
-    pdf.setFontSize(10);
+    pdf.setFontSize(9);
     pdf.setFont('helvetica', 'normal');
-    const summary = 'Passionate Full Stack Developer pursuing B.Tech in Information Technology with hands-on experience in modern web technologies. Proven track record in hackathons including SIH 2024 and HackIndia 2025. Skilled in creating scalable web applications.';
-    const summaryLines = pdf.splitTextToSize(summary, pageWidth - 40);
-    pdf.text(summaryLines, 20, yPos);
-    yPos += (summaryLines.length * 5) + 10;
+    pdf.text('Phone', 10, sidebarY);
+    sidebarY += 4;
+    pdf.text('+918939533725', 10, sidebarY);
+    sidebarY += 8;
+    
+    pdf.text('Email', 10, sidebarY);
+    sidebarY += 4;
+    pdf.text('karthisenthil026@', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('gmail.com', 10, sidebarY);
+    sidebarY += 8;
+    
+    pdf.text('Address', 10, sidebarY);
+    sidebarY += 4;
+    pdf.text('Karur, Tamil Nadu', 10, sidebarY);
+    sidebarY += 8;
+    
+    pdf.text('LinkedIn', 10, sidebarY);
+    sidebarY += 4;
+    pdf.text('linkedin.com/in/', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('karthikeyan-s-tech', 10, sidebarY);
+    sidebarY += 8;
+    
+    pdf.text('GitHub', 10, sidebarY);
+    sidebarY += 4;
+    pdf.text('github.com/', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('Karthikeyan-S26', 10, sidebarY);
+    sidebarY += 15;
 
-    // Education
-    checkPageBreak(40);
+    // Education Section
     pdf.setFontSize(14);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('EDUCATION', 20, yPos);
-    pdf.line(20, yPos + 2, 60, yPos + 2);
+    pdf.text('Education', 10, sidebarY);
+    sidebarY += 10;
     
-    yPos += 10;
-    pdf.setFontSize(11);
-    pdf.setFont('helvetica', 'bold');
-    pdf.text('B.Tech Information Technology', 20, yPos);
-    yPos += 6;
     pdf.setFontSize(10);
-    pdf.setFont('helvetica', 'normal');
-    pdf.text('Kongunadu College of Engineering and Technology', 20, yPos);
-    yPos += 5;
-    pdf.text('2023 - 2027', 20, yPos);
-    yPos += 10;
+    pdf.setFont('helvetica', 'bold');
+    pdf.text('B.Tech Information', 10, sidebarY);
+    sidebarY += 4;
+    pdf.text('Technology', 10, sidebarY);
+    sidebarY += 6;
     
-    pdf.setFontSize(11);
-    pdf.setFont('helvetica', 'bold');
-    pdf.text('Higher Secondary Education', 20, yPos);
-    yPos += 6;
-    pdf.setFontSize(10);
+    pdf.setFontSize(9);
     pdf.setFont('helvetica', 'normal');
-    pdf.text('KSV Higher Secondary School', 20, yPos);
-    yPos += 15;
+    pdf.text('Kongunadu College of', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('Engineering and', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('Technology', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('2023 - 2027', 10, sidebarY);
+    sidebarY += 10;
+    
+    pdf.setFontSize(10);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text('Higher Secondary', 10, sidebarY);
+    sidebarY += 6;
+    
+    pdf.setFontSize(9);
+    pdf.setFont('helvetica', 'normal');
+    pdf.text('KSV Higher Secondary', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('School', 10, sidebarY);
+    sidebarY += 3;
+    pdf.text('2021 - 2023', 10, sidebarY);
+    sidebarY += 15;
 
-    // Technical Skills
-    checkPageBreak(50);
+    // Skills Section
     pdf.setFontSize(14);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('TECHNICAL SKILLS', 20, yPos);
-    pdf.line(20, yPos + 2, 70, yPos + 2);
+    pdf.text('Skills', 10, sidebarY);
+    sidebarY += 8;
     
-    yPos += 10;
     const skills = [
-      'Programming Languages: Java, C, Python, JavaScript',
-      'Web Technologies: HTML, CSS, Node.js',
-      'Database: MySQL, DBMS, Firebase',
-      'Tools & Platforms: VS Code, Git, GitHub'
+      'Java', 'C', 'Python', 'HTML', 'CSS', 'JavaScript',
+      'Node.js', 'VS Code', 'Git & GitHub', 'MySQL',
+      'Firebase', 'Data Structure', 'Cyber Security'
     ];
     
-    pdf.setFontSize(10);
+    pdf.setFontSize(8);
     pdf.setFont('helvetica', 'normal');
-    skills.forEach((skill, index) => {
-      pdf.text(`• ${skill}`, 25, yPos + (index * 6));
+    skills.forEach((skill) => {
+      pdf.text(`• ${skill}`, 12, sidebarY);
+      sidebarY += 4;
     });
-    yPos += (skills.length * 6) + 10;
+    sidebarY += 10;
 
-    // Professional Experience
-    checkPageBreak(60);
+    // Language Section
     pdf.setFontSize(14);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('PROFESSIONAL EXPERIENCE', 20, yPos);
-    pdf.line(20, yPos + 2, 90, yPos + 2);
+    pdf.text('Language', 10, sidebarY);
+    sidebarY += 8;
     
+    pdf.setFontSize(9);
+    pdf.setFont('helvetica', 'normal');
+    pdf.text('• English', 12, sidebarY);
+    sidebarY += 5;
+    pdf.text('• Tamil', 12, sidebarY);
+
+    // Right Content Area
+    yPos = 50;
+    pdf.setTextColor(0, 0, 0);
+
+    // About Me Section
+    pdf.setFontSize(16);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text('About Me', rightContentStart, yPos);
     yPos += 10;
     
-    // Experience 1
-    pdf.setFontSize(11);
+    pdf.setFontSize(10);
+    pdf.setFont('helvetica', 'normal');
+    const aboutText = 'I am a passionate and dedicated Full Stack Developer with hands-on experience in building responsive and scalable web applications using modern technologies like React.js, Node.js, MongoDB, and Express.js. Currently pursuing a B.Tech in Information Technology, I have developed multiple full-stack projects and participated in national-level hackathons. I enjoy solving real-world problems through code and continuously improving my skills in front-end and back-end development.';
+    const aboutLines = pdf.splitTextToSize(aboutText, pageWidth - rightContentStart - 10);
+    pdf.text(aboutLines, rightContentStart, yPos);
+    yPos += (aboutLines.length * 4) + 15;
+
+    // Internships Section
+    checkPageBreak(60);
+    pdf.setFontSize(16);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('Front-End Developer', 20, yPos);
+    pdf.text('Internships', rightContentStart, yPos);
+    yPos += 10;
+    
+    // Front-End Developer
+    pdf.setFontSize(12);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text('Front-End Developer', rightContentStart, yPos);
     yPos += 6;
     pdf.setFontSize(10);
     pdf.setFont('helvetica', 'italic');
-    pdf.text('Micro IT | May 10 - June 5, 2025', 20, yPos);
+    pdf.text('Micro IT | May 10 - June 5, 2025', rightContentStart, yPos);
     yPos += 6;
     pdf.setFont('helvetica', 'normal');
-    pdf.text('• Developed responsive web interfaces using modern frontend technologies', 25, yPos);
-    yPos += 5;
-    pdf.text('• Optimized web applications for maximum speed and scalability', 25, yPos);
+    pdf.text('• Developed responsive web interfaces using React.js and Tailwind CSS.', rightContentStart + 5, yPos);
+    yPos += 4;
+    pdf.text('• Optimized web performance for scalability and speed.', rightContentStart + 5, yPos);
     yPos += 10;
     
-    // Experience 2
-    checkPageBreak(30);
-    pdf.setFontSize(11);
+    // Web Developer
+    pdf.setFontSize(12);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('Web Developer', 20, yPos);
+    pdf.text('Web Developer', rightContentStart, yPos);
     yPos += 6;
     pdf.setFontSize(10);
     pdf.setFont('helvetica', 'italic');
-    pdf.text('Media Wave Technology | June 2 - June 18, 2025', 20, yPos);
+    pdf.text('Media Wave Technologies | June 2 - June 18, 2025', rightContentStart, yPos);
     yPos += 6;
     pdf.setFont('helvetica', 'normal');
-    pdf.text('• Built full-stack web applications using React.js and Node.js', 25, yPos);
-    yPos += 5;
-    pdf.text('• Implemented database solutions and API integrations', 25, yPos);
+    pdf.text('• Built full-stack web apps using React.js and Node.js.', rightContentStart + 5, yPos);
+    yPos += 4;
+    pdf.text('• Implemented database and API integrations.', rightContentStart + 5, yPos);
     yPos += 15;
 
-    // Key Projects
+    // Projects Section
     checkPageBreak(80);
-    pdf.setFontSize(14);
+    pdf.setFontSize(16);
     pdf.setFont('helvetica', 'bold');
-    pdf.text('KEY PROJECTS', 20, yPos);
-    pdf.line(20, yPos + 2, 65, yPos + 2);
-    
+    pdf.text('Projects', rightContentStart, yPos);
     yPos += 10;
+    
     const projects = [
       {
         name: 'Smart Traffic Management System',
-        tech: 'SIH 2024',
-        desc: 'Intelligent traffic management solution using IoT and ML algorithms.'
+        type: 'SIH 2024',
+        desc: 'IoT & ML-based solution to manage city traffic flow intelligently.'
       },
       {
         name: 'AI Habit Tracker',
-        tech: 'HackIndia 2025',
-        desc: 'Habit tracking app with AI-powered insights and recommendations.'
+        type: 'HackIndia 2025',
+        desc: 'AI-powered tracker that gives daily habit insights and recommendations.'
       },
       {
-        name: 'StyleSpot E-commerce Platform',
-        tech: 'Full Stack Application',
-        desc: 'Complete e-commerce solution with authentication and payments.'
+        name: 'StyleSpot E-Commerce Platform',
+        type: 'Full Stack App',
+        desc: 'React, Node.js, MongoDB based shopping platform with payment and authentication.'
       },
       {
-        name: 'ThoughtNest Global Blog Platform',
-        tech: 'Full Stack Application',
-        desc: 'Global blog platform with content management and user engagement.'
+        name: 'ThoughtNest Blog Website',
+        type: 'Full Stack App',
+        desc: 'User-focused blogging system with content management.'
       }
     ];
     
-    projects.forEach((project, index) => {
-      checkPageBreak(20);
+    projects.forEach((project) => {
+      checkPageBreak(25);
       pdf.setFontSize(11);
       pdf.setFont('helvetica', 'bold');
-      pdf.text(`• ${project.name}`, 20, yPos);
-      yPos += 6;
-      pdf.setFontSize(10);
+      pdf.text(project.name, rightContentStart, yPos);
+      yPos += 5;
+      pdf.setFontSize(9);
       pdf.setFont('helvetica', 'italic');
-      pdf.text(`${project.tech}`, 25, yPos);
+      pdf.text(project.type, rightContentStart, yPos);
       yPos += 5;
       pdf.setFont('helvetica', 'normal');
-      const descLines = pdf.splitTextToSize(project.desc, pageWidth - 50);
-      pdf.text(descLines, 25, yPos);
-      yPos += (descLines.length * 5) + 5;
+      const descLines = pdf.splitTextToSize(project.desc, pageWidth - rightContentStart - 10);
+      pdf.text(descLines, rightContentStart + 5, yPos);
+      yPos += (descLines.length * 4) + 8;
     });
 
-    // Achievements
-    checkPageBreak(40);
-    pdf.setFontSize(14);
-    pdf.setFont('helvetica', 'bold');
-    pdf.text('ACHIEVEMENTS & ACTIVITIES', 20, yPos);
-    pdf.line(20, yPos + 2, 100, yPos + 2);
-    
-    yPos += 10;
-    const achievements = [
-      'Participated in Smart India Hackathon (SIH) 2024',
-      'Participated in HackIndia 2025',
-      'Completed multiple web development internships',
-      'Active contributor to open-source projects on GitHub'
-    ];
-    
-    pdf.setFontSize(10);
-    pdf.setFont('helvetica', 'normal');
-    achievements.forEach((achievement, index) => {
-      pdf.text(`• ${achievement}`, 25, yPos + (index * 6));
-    });
-    yPos += (achievements.length * 6) + 15;
-
-    // Declaration
-    checkPageBreak(30);
-    pdf.setFontSize(12);
-    pdf.setFont('helvetica', 'bold');
-    pdf.text('DECLARATION', 20, yPos);
-    yPos += 8;
-    pdf.setFontSize(10);
-    pdf.setFont('helvetica', 'normal');
-    const declaration = 'I hereby declare that the contents of my resume are accurate to the best of my knowledge and verify their authenticity.';
-    const declarationLines = pdf.splitTextToSize(declaration, pageWidth - 40);
-    pdf.text(declarationLines, 20, yPos);
-    yPos += (declarationLines.length * 5) + 10;
-    
-    // Signature section
-    pdf.text(`Place: Tamil Nadu, India`, 20, yPos);
-    pdf.text(`Date: ${new Date().toLocaleDateString()}`, 20, yPos + 6);
-    pdf.text('(KARTHIKEYAN S)', pageWidth - 60, yPos + 6);
+    // Redraw sidebar on final page if needed
+    if (pdf.internal.getCurrentPageInfo().pageNumber > 1) {
+      pdf.setFillColor(60, 60, 60);
+      pdf.rect(0, 0, leftSidebarWidth, pageHeight, 'F');
+    }
 
     pdf.save('Karthikeyan_S_Resume.pdf');
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-lg print:shadow-none">
-      {/* Header */}
-      <div className="bg-white p-8 border-b-2 border-gray-200">
-        <div className="flex items-center gap-8">
+    <div className="max-w-6xl mx-auto bg-white shadow-lg print:shadow-none flex">
+      {/* Left Sidebar */}
+      <div className="w-80 bg-gray-700 text-white">
+        {/* Profile Photo */}
+        <div className="p-8 text-center">
           <img 
             src="/lovable-uploads/d5884f26-a8e0-4739-9ce5-473a12e69518.png" 
             alt="Karthikeyan S"
-            className="w-32 h-32 rounded-full object-cover border-4 border-gray-300"
+            className="w-32 h-32 rounded-full object-cover border-4 border-white mx-auto mb-4"
             style={{ objectPosition: 'center 20%' }}
           />
-          <div>
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">KARTHIKEYAN S</h1>
-            <div className="w-32 h-1 bg-black mb-2"></div>
-            <h2 className="text-xl text-gray-600">Full Stack Developer</h2>
+        </div>
+
+        {/* Contact Section */}
+        <div className="px-8 pb-8">
+          <h3 className="text-xl font-bold mb-4 bg-gray-800 p-3 -mx-8">Contact</h3>
+          <div className="space-y-4 text-sm">
+            <div>
+              <h4 className="font-semibold mb-1">Phone</h4>
+              <p>+918939533725</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-1">Email</h4>
+              <p>karthisenthil026@gmail.com</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-1">Address</h4>
+              <p>Karur, Tamil Nadu</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-1">LinkedIn</h4>
+              <p className="break-all">linkedin.com/in/karthikeyan-s-tech</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-1">GitHub</h4>
+              <p>github.com/Karthikeyan-S26</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Contact Info */}
-      <div className="bg-gray-50 p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-gray-700">
-          <div className="flex items-center gap-2">
-            <Mail size={16} />
-            <span>karthisenthil026@gmail.com</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Phone size={16} />
-            <span>+91 8939533725</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin size={16} />
-            <span>Tamil Nadu, India</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Github size={16} />
-            <span>github.com/Karthikeyan-S26</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Linkedin size={16} />
-            <span>linkedin.com/in/karthikeyan-s-tech</span>
+        {/* Education Section */}
+        <div className="px-8 pb-8">
+          <h3 className="text-xl font-bold mb-4 bg-gray-800 p-3 -mx-8">Education</h3>
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-bold">B.Tech Information Technology</h4>
+              <p className="text-sm text-gray-300">Kongunadu College of Engineering and Technology</p>
+              <p className="text-sm text-gray-400">2023 - 2027</p>
+            </div>
+            <div>
+              <h4 className="font-bold">Higher Secondary</h4>
+              <p className="text-sm text-gray-300">KSV Higher Secondary School</p>
+              <p className="text-sm text-gray-400">2021 - 2023</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="p-8 space-y-8">
-        {/* Professional Summary */}
-        <section>
-          <h3 className="text-xl font-bold text-gray-800 mb-3 border-b-2 border-blue-600 pb-2">
-            PROFESSIONAL SUMMARY
-          </h3>
-          <p className="text-gray-700 leading-relaxed">
-            Passionate Full Stack Developer pursuing B.Tech in Information Technology with hands-on experience 
-            in modern web technologies. Proven track record in hackathons including SIH 2024 and HackIndia 2025. 
-            Skilled in creating scalable web applications using React.js, Node.js, and various databases.
-          </p>
-        </section>
-
-        {/* Education */}
-        <section>
-          <h3 className="text-xl font-bold text-gray-800 mb-3 border-b-2 border-blue-600 pb-2">
-            EDUCATION
-          </h3>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-bold text-gray-800 text-lg">B.Tech Information Technology</h4>
-              <p className="text-blue-600 font-medium">Kongunadu College of Engineering and Technology</p>
-              <p className="text-gray-600 text-sm">2023 – 2027</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800 text-lg">Higher Secondary Education</h4>
-              <p className="text-blue-600 font-medium">KSV Higher Secondary School</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Technical Skills */}
-        <section>
-          <h3 className="text-xl font-bold text-gray-800 mb-3 border-b-2 border-blue-600 pb-2">
-            TECHNICAL SKILLS
-          </h3>
-          <div className="space-y-3">
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Programming Languages</h4>
-              <p className="text-gray-700">Java, C, Python, JavaScript</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Web Technologies</h4>
-              <p className="text-gray-700">HTML, CSS, Node.js</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Database & Storage</h4>
-              <p className="text-gray-700">MySQL, DBMS, Firebase</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Development Tools</h4>
-              <p className="text-gray-700">VS Code, Git, GitHub</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Experience */}
-        <section>
-          <h3 className="text-xl font-bold text-gray-800 mb-3 border-b-2 border-blue-600 pb-2">
-            PROFESSIONAL EXPERIENCE
-          </h3>
-          <div className="space-y-6">
-            <div>
-              <h4 className="font-bold text-gray-800 text-lg">Front-End Developer</h4>
-              <p className="text-gray-600 text-sm mb-2 italic">Micro IT | May 10 – June 5, 2025</p>
-              <ul className="text-gray-700 ml-6 space-y-1">
-                <li>• Developed responsive web interfaces using modern frontend technologies</li>
-                <li>• Optimized web applications for maximum speed and scalability</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800 text-lg">Web Developer</h4>
-              <p className="text-gray-600 text-sm mb-2 italic">Media Wave Technology | June 2 – June 18, 2025</p>
-              <ul className="text-gray-700 ml-6 space-y-1">
-                <li>• Built full-stack web applications using React.js and Node.js</li>
-                <li>• Implemented database solutions and API integrations</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Projects */}
-        <section>
-          <h3 className="text-xl font-bold text-gray-800 mb-3 border-b-2 border-blue-600 pb-2">
-            KEY PROJECTS
-          </h3>
-          <div className="space-y-4">
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold text-gray-800">• Smart Traffic Management System</h4>
-              <p className="text-blue-600 font-medium text-sm italic">SIH 2024</p>
-              <p className="text-gray-700 text-sm">Intelligent traffic management solution using IoT and ML algorithms.</p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold text-gray-800">• AI Habit Tracker</h4>
-              <p className="text-blue-600 font-medium text-sm italic">HackIndia 2025</p>
-              <p className="text-gray-700 text-sm">Habit tracking app with AI-powered insights and recommendations.</p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold text-gray-800">• StyleSpot E-commerce Platform</h4>
-              <p className="text-blue-600 font-medium text-sm italic">Full Stack Application</p>
-              <p className="text-gray-700 text-sm">Complete e-commerce solution with authentication and payments.</p>
-              <a href="https://github.com/Karthikeyan-S26/stylespot" className="text-blue-500 underline text-xs">GitHub Link</a>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold text-gray-800">• ThoughtNest Global Blog Platform</h4>
-              <p className="text-blue-600 font-medium text-sm italic">Full Stack Application</p>
-              <p className="text-gray-700 text-sm">Global blog platform with content management and user engagement.</p>
-              <a href="https://github.com/Karthikeyan-S26/thoughtnest-global-voices" className="text-blue-500 underline text-xs">GitHub Link</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Achievements */}
-        <section>
-          <h3 className="text-xl font-bold text-gray-800 mb-3 border-b-2 border-blue-600 pb-2">
-            ACHIEVEMENTS & ACTIVITIES
-          </h3>
-          <ul className="text-gray-700 space-y-2 ml-6">
-            <li>• Participated in Smart India Hackathon (SIH) 2024</li>
-            <li>• Participated in HackIndia 2025</li>
-            <li>• Completed multiple web development internships</li>
-            <li>• Active contributor to open-source projects on GitHub</li>
+        {/* Skills Section */}
+        <div className="px-8 pb-8">
+          <h3 className="text-xl font-bold mb-4 bg-gray-800 p-3 -mx-8">Skills</h3>
+          <ul className="text-sm space-y-2">
+            <li>• Java</li>
+            <li>• C</li>
+            <li>• Python</li>
+            <li>• HTML</li>
+            <li>• CSS</li>
+            <li>• JavaScript</li>
+            <li>• Node.js</li>
+            <li>• VS Code</li>
+            <li>• Git & GitHub</li>
+            <li>• MySQL</li>
+            <li>• Firebase</li>
+            <li>• Data Structure</li>
+            <li>• Cyber Security</li>
           </ul>
+        </div>
+
+        {/* Language Section */}
+        <div className="px-8 pb-8">
+          <h3 className="text-xl font-bold mb-4 bg-gray-800 p-3 -mx-8">Language</h3>
+          <ul className="text-sm space-y-2">
+            <li>• English</li>
+            <li>• Tamil</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Right Content Area */}
+      <div className="flex-1 p-8">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">KARTHIKEYAN S</h1>
+          <h2 className="text-xl text-gray-600">Full Stack Developer</h2>
+        </div>
+
+        {/* About Me Section */}
+        <section className="mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">About Me</h3>
+          <p className="text-gray-700 leading-relaxed">
+            I am a passionate and dedicated Full Stack Developer with hands-on experience in building 
+            responsive and scalable web applications using modern technologies like React.js, Node.js, 
+            MongoDB, and Express.js. Currently pursuing a B.Tech in Information Technology, I have 
+            developed multiple full-stack projects and participated in national-level hackathons. I enjoy 
+            solving real-world problems through code and continuously improving my skills in front-end 
+            and back-end development.
+          </p>
         </section>
 
-        {/* Declaration */}
-        <section className="border-t pt-6">
-          <h3 className="text-lg font-bold text-gray-800 mb-3">DECLARATION</h3>
-          <p className="text-sm text-gray-700 mb-6">
-            I hereby declare that the contents of my resume are accurate to the 
-            best of my knowledge and verify their authenticity.
-          </p>
-          <div className="flex justify-between items-end text-sm">
-            <div>
-              <p>Place: Tamil Nadu, India</p>
-              <p>Date: {new Date().toLocaleDateString()}</p>
+        {/* Internships Section */}
+        <section className="mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Internships</h3>
+          <div className="space-y-6">
+            <div className="border-l-4 border-blue-600 pl-4">
+              <h4 className="text-lg font-semibold text-gray-900">Front-End Developer</h4>
+              <p className="text-gray-600 text-sm mb-2">Micro IT | May 10 - June 5, 2025</p>
+              <ul className="text-gray-700 text-sm space-y-1">
+                <li>• Developed responsive web interfaces using React.js and Tailwind CSS.</li>
+                <li>• Optimized web performance for scalability and speed.</li>
+              </ul>
             </div>
-            <div className="text-right">
-              <p className="font-bold">(KARTHIKEYAN S)</p>
+            <div className="border-l-4 border-blue-600 pl-4">
+              <h4 className="text-lg font-semibold text-gray-900">Web Developer</h4>
+              <p className="text-gray-600 text-sm mb-2">Media Wave Technologies | June 2 - June 18, 2025</p>
+              <ul className="text-gray-700 text-sm space-y-1">
+                <li>• Built full-stack web apps using React.js and Node.js.</li>
+                <li>• Implemented database and API integrations.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Projects</h3>
+          <div className="space-y-4">
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-semibold text-gray-900">Smart Traffic Management System</h4>
+              <p className="text-blue-600 text-sm font-medium">SIH 2024</p>
+              <p className="text-gray-700 text-sm">IoT & ML-based solution to manage city traffic flow intelligently.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-semibold text-gray-900">AI Habit Tracker</h4>
+              <p className="text-blue-600 text-sm font-medium">HackIndia 2025</p>
+              <p className="text-gray-700 text-sm">AI-powered tracker that gives daily habit insights and recommendations.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-semibold text-gray-900">StyleSpot E-Commerce Platform</h4>
+              <p className="text-blue-600 text-sm font-medium">Full Stack App</p>
+              <p className="text-gray-700 text-sm">React, Node.js, MongoDB based shopping platform with payment and authentication.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-semibold text-gray-900">ThoughtNest Blog Website</h4>
+              <p className="text-blue-600 text-sm font-medium">Full Stack App</p>
+              <p className="text-gray-700 text-sm">User-focused blogging system with content management.</p>
             </div>
           </div>
         </section>
