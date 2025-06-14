@@ -1,50 +1,50 @@
-
 import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import { toast } from "@/components/ui/use-toast";
 
-// Use the path to your newly uploaded image
-const resumeImage = "/lovable-uploads/d7fc8646-3c08-438b-a4c4-51944116fbb3.png";
-
+// Instead of using a static image, capture the visible resume content
 export const useResumePDF = () => {
   const generatePDF = async () => {
     try {
+      // Get the DOM node of the main resume box
+      const resumeNode = document.querySelector(".max-w-6xl.bg-white");
+      if (!resumeNode) {
+        toast({
+          title: "Resume not found",
+          description: "Could not find resume content to export.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Render DOM node to canvas as an image (with high DPI)
+      const canvas = await html2canvas(resumeNode as HTMLElement, {
+        scale: 2,
+        backgroundColor: "#fff", // ensures PDF has white background
+        useCORS: true,
+      });
+
+      const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF({
         orientation: "portrait",
         unit: "pt",
         format: "a4",
       });
 
-      // Promise to load the image
-      const loadImage = (src: string) =>
-        new Promise<HTMLImageElement>((resolve, reject) => {
-          const img = new window.Image();
-          img.crossOrigin = "Anonymous";
-          img.src = src;
-          img.onload = () => resolve(img);
-          img.onerror = reject;
-        });
-
-      const img = await loadImage(resumeImage);
-
+      // Fit the image to A4 dimensions, keeping aspect ratio
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = pageWidth;
+      const imgHeight = (canvas.height * pageWidth) / canvas.width;
 
-      // Calculate image dimensions to fit A4 (keep aspect ratio)
-      const imgRatio = img.width / img.height;
-      let imgWidth = pageWidth;
-      let imgHeight = imgWidth / imgRatio;
-
-      if (imgHeight > pageHeight) {
-        imgHeight = pageHeight;
-        imgWidth = imgHeight * imgRatio;
+      let y = 0;
+      if (imgHeight < pageHeight) {
+        y = (pageHeight - imgHeight) / 2;
       }
 
-      // Center image on page
-      const x = (pageWidth - imgWidth) / 2;
-      const y = (pageHeight - imgHeight) / 2;
+      pdf.addImage(imgData, "PNG", 0, y, imgWidth, imgHeight);
+      pdf.save("Karthikeyan_S_Resume.pdf");
 
-      pdf.addImage(img, "PNG", x, y, imgWidth, imgHeight);
-      pdf.save("Karthikeyan_Photo.pdf");
       toast({
         title: "Success",
         description: "PDF downloaded successfully!",
