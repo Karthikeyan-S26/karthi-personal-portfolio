@@ -2,7 +2,7 @@
 
 🚀 **Live Site**: [https://karthikeyan-dev.netlify.app](https://karthikeyan-dev.netlify.app)
 
-🔗 **Lovable Editor Link**: [Edit via Lovable](https://lovable.dev/projects/bac74f07-04fc-4536-8d57-e8e649b920ca)
+
 
 ---
 
