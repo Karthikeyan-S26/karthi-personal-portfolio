@@ -5,7 +5,6 @@ import ResumeHeader from "./resume/ResumeHeader";
 import ResumeAbout from "./resume/ResumeAbout";
 import ResumeInternships from "./resume/ResumeInternships";
 import ResumeProjects from "./resume/ResumeProjects";
-import ResumePDFDownloadButton from "./resume/ResumePDFDownloadButton";
 
 const Resume = () => (
   <div className="max-w-6xl mx-auto bg-white shadow-lg print:shadow-none flex">
@@ -15,7 +14,6 @@ const Resume = () => (
       <ResumeAbout />
       <ResumeInternships />
       <ResumeProjects />
-      <ResumePDFDownloadButton />
     </div>
   </div>
 );
