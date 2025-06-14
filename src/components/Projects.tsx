@@ -34,7 +34,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/Karthikeyan-S26/stylespot"
     },
     {
       title: "ThoughtNest Blog",
@@ -42,7 +42,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1486312338219-ce68e2c6b7-6?w=600",
       technologies: ["React", "Express", "MySQL", "JWT"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/Karthikeyan-S26/thoughtnest-global-voices"
     }
   ];
 
@@ -96,6 +96,8 @@ const Projects = () => {
                   </a>
                   <a 
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1 md:gap-2 px-3 md:px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-xs md:text-sm font-medium flex-1 justify-center"
                   >
                     <Github size={14} className="md:w-4 md:h-4" />
