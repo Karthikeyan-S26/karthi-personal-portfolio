@@ -1,0 +1,5 @@
+
+// This file exports a small, generic avatar placeholder image as a base64 PNG.
+// Later, you can replace `imgData` with your own avatar/brand image.
+export const imgData =
+  "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABoElEQVR4Xu3YwU0DQRAG4XfBGBsgx0A6C2KnogOgioAKCADpTIAqACqAC1UAIgDSBrWJEOMyd+qyPTV7U9nTqbZOT53Y8A6vxHdbmEwM/fNc2ICe6I0rP2kqQeRVr/Wh0oheAKl4kQNKBSAlkAB0AGICUgAQkBUAAWQAEIBSAJTAAt4sqQVQAJ9F3wLJ9iAS5nHkvDrj2GAovlmwDlqxsB6HqQQwDfpAfkdECsdRAHcOebZjnL7vI+zIILq4jF4uYvLgOc+zDK+0khM+7uSLvChujyjhJ+d0zNj9hA5Md6R71Ahy8gxYw9fA8rWCyTKbTxwPSKsDmLg9dsygFUAFkAFIAEpAAkAVAAWQAFIABpABSAASQAApAAUgAEkAACkABSAASQAEIBSAASQABiAlAASkABaACcgAogAqgAqAYJ/49e+26JfR8AAAAASUVORK5CYII=";
