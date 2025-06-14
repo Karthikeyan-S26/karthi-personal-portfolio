@@ -7,14 +7,8 @@ const Hero = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const downloadResume = () => {
-    // Create a link to download the resume
-    const link = document.createElement('a');
-    link.href = '/lovable-uploads/3fcbc590-a7a6-41f5-a04c-c1fd0e5140ee.png';
-    link.download = 'Karthikeyan_S_Resume.png';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const viewResume = () => {
+    window.open('/resume', '_blank');
   };
 
   return (
@@ -26,8 +20,8 @@ const Hero = () => {
             <img 
               src="/lovable-uploads/d5884f26-a8e0-4739-9ce5-473a12e69518.png" 
               alt="Karthikeyan S"
-              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover object-center shadow-xl border-4 border-white"
-              style={{ objectPosition: 'center 20%' }}
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover shadow-xl border-4 border-white"
+              style={{ objectPosition: 'center 30%' }}
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-transparent"></div>
           </div>
@@ -70,11 +64,11 @@ const Hero = () => {
             Learn More
           </button>
           <button 
-            onClick={downloadResume}
+            onClick={viewResume}
             className="px-6 md:px-8 py-2.5 md:py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300 font-medium flex items-center justify-center gap-2 text-sm md:text-base"
           >
             <Download size={16} className="md:w-5 md:h-5" />
-            Download Resume
+            View Resume
           </button>
           <a 
             href="#contact" 
