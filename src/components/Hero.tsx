@@ -10,7 +10,7 @@ const Hero = () => {
   const downloadResume = () => {
     // Create a link to download the resume
     const link = document.createElement('a');
-    link.href = '/lovable-uploads/3fcbc590-a7a6-41f5-a04c-c1fd0e5140ee.png';
+    link.href = '/lovable-uploads/profile(1).jpg';
     link.download = 'Karthikeyan_S_Resume.png';
     document.body.appendChild(link);
     link.click();
@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="mb-8 flex justify-center">
           <div className="relative">
             <img 
-              src="/lovable-uploads/d5884f26-a8e0-4739-9ce5-473a12e69518.png" 
+              src="/lovable-uploads/profile.jpg" 
               alt="Karthikeyan S"
               className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover shadow-xl border-4 border-white"
             />
