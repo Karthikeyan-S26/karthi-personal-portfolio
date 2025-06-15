@@ -2,6 +2,21 @@
 import React from 'react';
 import { Code } from 'lucide-react';
 
+const skillsData = [
+  {
+    category: 'Frontend',
+    skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Tailwind CSS'],
+  },
+  {
+    category: 'Backend',
+    skills: ['Node.js', 'Express.js', 'RESTful APIs'],
+  },
+  {
+    category: 'Database & Tools',
+    skills: ['MySQL', 'MongoDB', 'Git & GitHub', 'Java', 'Python', 'C'],
+  },
+];
+
 const ResumeSkills = () => {
   return (
     <section>
@@ -9,19 +24,22 @@ const ResumeSkills = () => {
         <Code size={20} />
         Technical Skills
       </h3>
-      <div className="space-y-2">
-        <div>
-          <h4 className="font-semibold text-gray-800 text-sm mb-1">Frontend</h4>
-          <p className="text-gray-700 text-xs">HTML5, CSS3, JavaScript (ES6+), React.js, Tailwind CSS</p>
-        </div>
-        <div>
-          <h4 className="font-semibold text-gray-800 text-sm mb-1">Backend</h4>
-          <p className="text-gray-700 text-xs">Node.js, Express.js, RESTful APIs</p>
-        </div>
-        <div>
-          <h4 className="font-semibold text-gray-800 text-sm mb-1">Database & Tools</h4>
-          <p className="text-gray-700 text-xs">MySQL, MongoDB, Git & GitHub, Java, Python, C</p>
-        </div>
+      <div className="space-y-3 pt-2">
+        {skillsData.map((item, index) => (
+          <div key={index}>
+            <h4 className="font-semibold text-gray-800 text-sm mb-2">{item.category}</h4>
+            <div className="flex flex-wrap gap-2">
+              {item.skills.map((skill, skillIndex) => (
+                <span
+                  key={skillIndex}
+                  className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
