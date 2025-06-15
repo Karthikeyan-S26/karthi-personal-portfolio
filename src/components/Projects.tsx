@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: "ThoughtNest Blog",
       description: "A full-featured blog website with content management, user authentication, comment system, and responsive design for seamless reading experience.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68e2c6b7-6?w=600",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600",
       technologies: ["React", "Express", "MySQL", "JWT"],
       liveUrl: "#",
       githubUrl: "https://github.com/Karthikeyan-S26/thoughtnest-global-voices"
