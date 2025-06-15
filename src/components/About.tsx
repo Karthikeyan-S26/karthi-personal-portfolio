@@ -1,18 +1,8 @@
 
 import React from 'react';
-import { Code, Lightbulb, Target, GraduationCap, Briefcase, Moon, Sun, CircleEllipsis } from 'lucide-react';
-import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Code, Lightbulb, Target, GraduationCap, Briefcase } from 'lucide-react';
 
 const About = () => {
-  const { setTheme } = useTheme();
-
   return (
     <section id="about" className="py-12 md:py-16 lg:py-20 px-4 bg-background text-foreground">
       <div className="max-w-6xl mx-auto">
@@ -20,26 +10,6 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
             About Me
           </h2>
-          <div className="absolute top-0 right-0">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <CircleEllipsis className="h-5 w-5" />
-                  <span className="sr-only">Theme options</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  <Sun className="mr-2 h-4 w-4" />
-                  <span>Light</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  <Moon className="mr-2 h-4 w-4" />
-                  <span>Dark</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
           <div className="w-20 md:w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
         
