@@ -8,7 +8,7 @@ const skills = [
 ];
 
 const ResumeSidebar = () => (
-  <div className="w-80 bg-gray-700 text-white">
+  <div className="w-full md:w-80 flex-shrink-0 bg-gray-700 text-white">
     <div className="p-8 text-center">
       <img 
         src="/lovable-uploads/d5884f26-a8e0-4739-9ce5-473a12e69518.png" 

@@ -7,9 +7,9 @@ import ResumeInternships from "./resume/ResumeInternships";
 import ResumeProjects from "./resume/ResumeProjects";
 
 const Resume = () => (
-  <div className="max-w-6xl mx-auto bg-white shadow-lg print:shadow-none flex">
+  <div className="max-w-6xl mx-auto bg-white shadow-lg print:shadow-none flex flex-col md:flex-row">
     <ResumeSidebar />
-    <div className="flex-1 p-8">
+    <div className="flex-1 p-4 md:p-8">
       <ResumeHeader />
       <ResumeAbout />
       <ResumeInternships />

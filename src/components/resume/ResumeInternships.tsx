@@ -3,7 +3,7 @@ import React from "react";
 
 const ResumeInternships = () => (
   <section className="mb-8">
-    <h3 className="text-2xl font-bold text-gray-900 mb-4">Internships</h3>
+    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Internships</h3>
     <div className="space-y-6">
       <div className="border-l-4 border-blue-600 pl-4">
         <h4 className="text-lg font-semibold text-gray-900">Front-End Developer</h4>

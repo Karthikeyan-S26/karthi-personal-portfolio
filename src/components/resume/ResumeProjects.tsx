@@ -26,7 +26,7 @@ const projects = [
 
 const ResumeProjects = () => (
   <section className="mb-8">
-    <h3 className="text-2xl font-bold text-gray-900 mb-4">Projects</h3>
+    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Projects</h3>
     <div className="space-y-4">
       {projects.map((project) => (
         <div key={project.name} className="bg-gray-50 p-4 rounded-lg">
