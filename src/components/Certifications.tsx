@@ -1,7 +1,8 @@
-import React from 'react';
-import { Award, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { Award, ExternalLink, X } from 'lucide-react';
 
 const Certifications = () => {
+  const [selectedCert, setSelectedCert] = useState<string | null>(null);
   const certificates = [
     {
       title: "Front End Web Developer Certification",
@@ -102,7 +103,10 @@ const Certifications = () => {
                 <p className="text-gray-400 text-xs mb-4">
                   {cert.date}
                 </p>
-                <button className="flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors group">
+                <button 
+                  onClick={() => setSelectedCert(cert.image)}
+                  className="flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors group"
+                >
                   <span>View Certificate</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -120,6 +124,27 @@ const Certifications = () => {
             </div>
           </div>
         </div>
+
+        {/* Certificate Modal */}
+        {selectedCert && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedCert(null)}
+          >
+            <button
+              onClick={() => setSelectedCert(null)}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <img 
+              src={selectedCert} 
+              alt="Certificate"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        )}
       </div>
     </section>
   );
