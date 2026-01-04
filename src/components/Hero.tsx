@@ -12,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white px-4 py-8">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white px-4 py-8 pt-20">
       <div className="text-center max-w-4xl mx-auto">
         {/* Profile Photo */}
         <div className="mb-8 flex justify-center">
