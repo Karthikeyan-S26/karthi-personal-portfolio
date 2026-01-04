@@ -17,11 +17,11 @@ const About = () => {
           <div className="order-2 lg:order-1">
             <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6 leading-relaxed">
               I'm Karthikeyan S, a passionate Front End Developer currently pursuing B.Tech in Information Technology 
-              at Kongunadu College of Engineering and Technology. I specialize in creating robust, scalable web applications 
-              using modern technologies like html, Css, and Javasript various databases.
+              at Kongunadu College of Engineering and Technology. I specialize in creating responsive, user-friendly web applications 
+              using modern technologies like HTML, CSS, JavaScript, and React.
             </p>
             <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-              With hands-on experience from internships and participation in  HackIndia 2025, 
+              With hands-on experience from internships and participation in HackIndia 2025, 
               I enjoy solving complex problems and turning innovative ideas into reality through clean, efficient code.
             </p>
             
@@ -56,11 +56,12 @@ const About = () => {
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">B.Tech Information Technology</h4>
                   <p className="text-blue-100 text-sm">Kongunadu College of Engineering and Technology</p>
-                  <p className="text-blue-200 text-xs md:text-sm">2023 – 2027</p>
+                  <p className="text-blue-200 text-xs md:text-sm">2023 – 2026 | CGPA: 8.0</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-sm md:text-base">Higher Secondary</h4>
-                  <p className="text-blue-100 text-sm">KSV Higher Secondary School</p>
+                  <h4 className="font-semibold text-sm md:text-base">Higher Secondary (HSC)</h4>
+                  <p className="text-blue-100 text-sm">SCTV Higher Secondary School</p>
+                  <p className="text-blue-200 text-xs md:text-sm">67%</p>
                 </div>
               </div>
             </div>
@@ -72,14 +73,14 @@ const About = () => {
               </div>
               <div className="space-y-3 md:space-y-4">
                 <div>
-                  <h4 className="font-semibold text-sm md:text-base">Front-End Developer</h4>
-                  <p className="text-green-100 text-sm">Micro IT</p>
-                  <p className="text-green-200 text-xs md:text-sm">May 10 - June 5, 2025</p>
+                  <h4 className="font-semibold text-sm md:text-base">Web Development Intern</h4>
+                  <p className="text-green-100 text-sm">Radix Wave Technologies</p>
+                  <p className="text-green-200 text-xs md:text-sm">June 18, 2025</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-sm md:text-base">Web Developer</h4>
-                  <p className="text-green-100 text-sm">Media Wave Technology</p>
-                  <p className="text-green-200 text-xs md:text-sm">June 2 - June 18, 2025</p>
+                  <h4 className="font-semibold text-sm md:text-base">Front End Development Intern</h4>
+                  <p className="text-green-100 text-sm">CodSoft</p>
+                  <p className="text-green-200 text-xs md:text-sm">Virtual</p>
                 </div>
               </div>
             </div>
