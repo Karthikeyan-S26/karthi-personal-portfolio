@@ -50,7 +50,7 @@ const ResumeSidebar = () => (
         <div>
           <h4 className="font-bold">B.Tech Information Technology</h4>
           <p className="text-sm text-gray-300">Kongunadu College of Engineering and Technology</p>
-          <p className="text-sm text-gray-400">2023 - 2026 / CGPA: 8</p>
+          <p className="text-sm text-gray-400">2023 - 2027 / CGPA: 8</p>
         </div>
         <div>
           <h4 className="font-bold">Higher Secondary (HSC)</h4>

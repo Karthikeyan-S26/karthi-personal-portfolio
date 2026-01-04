@@ -56,7 +56,7 @@ const About = () => {
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">B.Tech Information Technology</h4>
                   <p className="text-blue-100 text-sm">Kongunadu College of Engineering and Technology</p>
-                  <p className="text-blue-200 text-xs md:text-sm">2023 – 2026 | CGPA: 8.0</p>
+                  <p className="text-blue-200 text-xs md:text-sm">2023 – 2027 | CGPA: 8.0</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">Higher Secondary (HSC)</h4>
