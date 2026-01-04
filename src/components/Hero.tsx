@@ -31,7 +31,7 @@ const Hero = () => {
           Karthikeyan S
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 font-light">
-          Full Stack Developer
+          Front End Developer
         </p>
         <p className="text-base md:text-lg text-gray-500 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
           B.Tech IT student passionate about creating innovative web solutions and building scalable applications with modern technologies.
