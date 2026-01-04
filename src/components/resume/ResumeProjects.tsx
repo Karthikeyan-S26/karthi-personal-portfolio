@@ -3,24 +3,19 @@ import React from "react";
 
 const projects = [
   {
-    name: "Smart Traffic Management System",
-    type: "SIH 2024",
-    desc: "IoT & ML-based solution to manage city traffic flow intelligently."
+    name: "Personal Developer Portfolio Website",
+    type: "HTML, CSS, JavaScript",
+    desc: "Designed and developed an impressive personal portfolio to showcase my skills, projects, and contact clean UI, smooth navigation, and modern layouts."
   },
   {
-    name: "AI Habit Tracker",
-    type: "HackIndia 2025",
-    desc: "AI-powered tracker that gives daily habit insights and recommendations."
+    name: "StyleSpot - Fashion Web Application",
+    type: "HTML, CSS, JavaScript",
+    desc: "Created a fashion-focused website with modern UI/UX design. Designed user friendly interface and well-organized designs into functional web pages"
   },
   {
-    name: "StyleSpot E-Commerce Platform",
-    type: "Full Stack App",
-    desc: "React, Node.js, MongoDB based shopping platform with payment and authentication."
-  },
-  {
-    name: "ThoughtNest Blog Website",
-    type: "Full Stack App",
-    desc: "User-focused blogging system with content management."
+    name: "HabitFlow - Habit Tracking Web App",
+    type: "HTML, CSS, JavaScript, UI/UX Design",
+    desc: "Developed a habit tracking web app to help users monitor daily habits. Designed user-friendly interfaces to improve engagement and consistency."
   }
 ];
 

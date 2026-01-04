@@ -10,7 +10,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600",
       technologies: ["IoT", "Real-time Analytics", "Python", "Machine Learning"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/Karthikeyan-S26/traffic-wise-ai-web.git"
     },
     {
       title: "AI Habit Tracker",
@@ -18,7 +18,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600",
       technologies: ["React", "AI/ML", "Node.js", "MongoDB"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/Karthikeyan-S26/HabitFlow.git"
     },
     {
       title: "Sign Language Conversion",
@@ -26,7 +26,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600",
       technologies: ["Python", "OpenCV", "TensorFlow", "Machine Learning"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/Karthikeyan-S26/sign2text-ml-project.git"
     },
     {
       title: "StyleSpot E-commerce",
@@ -34,7 +34,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "#",
-      githubUrl: "https://github.com/Karthikeyan-S26/stylespot"
+      githubUrl: "https://github.com/Karthikeyan-S26/stylespot.git"
     },
     {
       title: "ThoughtNest Blog",
@@ -42,7 +42,15 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600",
       technologies: ["React", "Express", "MySQL", "JWT"],
       liveUrl: "#",
-      githubUrl: "https://github.com/Karthikeyan-S26/thoughtnest-global-voices"
+      githubUrl: "https://github.com/Karthikeyan-S26/thoughtnest-global-voices-7e9186e3.git"
+    },
+    {
+      title: "AI Resume Analyzer",
+      description: "An intelligent resume analysis tool that uses AI to evaluate resumes, provide feedback, and suggest improvements for better job applications.",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600",
+      technologies: ["Python", "AI/ML", "NLP", "React"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/Karthikeyan-S26/resume_analyzer.git"
     }
   ];
 
@@ -61,7 +69,7 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full">
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
@@ -71,7 +79,7 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
               </div>
               
-              <div className="p-4 md:p-6">
+              <div className="p-4 md:p-6 flex flex-col flex-grow">
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{project.title}</h3>
                 <p className="text-gray-600 mb-3 md:mb-4 text-sm leading-relaxed">{project.description}</p>
                 
@@ -86,22 +94,15 @@ const Projects = () => {
                   ))}
                 </div>
                 
-                <div className="flex gap-2 md:gap-3">
-                  <a 
-                    href={project.liveUrl}
-                    className="flex items-center gap-1 md:gap-2 px-3 md:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs md:text-sm font-medium flex-1 justify-center"
-                  >
-                    <ExternalLink size={14} className="md:w-4 md:h-4" />
-                    Demo
-                  </a>
+                <div className="flex mt-auto">
                   <a 
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 md:gap-2 px-3 md:px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-xs md:text-sm font-medium flex-1 justify-center"
+                    className="flex items-center gap-1 md:gap-2 px-4 md:px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs md:text-sm font-medium w-full justify-center"
                   >
                     <Github size={14} className="md:w-4 md:h-4" />
-                    Code
+                    View Code
                   </a>
                 </div>
               </div>

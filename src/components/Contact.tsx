@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Code2 } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -92,6 +92,14 @@ const Contact = () => {
                   className="w-9 h-9 md:w-10 md:h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
                 >
                   <Linkedin size={18} className="md:w-5 md:h-5" />
+                </a>
+                <a 
+                  href="https://leetcode.com/u/621323205024/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 md:w-10 md:h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors"
+                >
+                  <Code2 size={18} className="md:w-5 md:h-5" />
                 </a>
               </div>
             </div>

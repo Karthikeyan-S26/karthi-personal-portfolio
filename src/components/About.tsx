@@ -16,12 +16,12 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 lg:order-1">
             <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-              I'm Karthikeyan S, a passionate Full Stack Developer currently pursuing B.Tech in Information Technology 
+              I'm Karthikeyan S, a passionate Front End Developer currently pursuing B.Tech in Information Technology 
               at Kongunadu College of Engineering and Technology. I specialize in creating robust, scalable web applications 
-              using modern technologies like React.js, Node.js, and various databases.
+              using modern technologies like html, Css, and Javasript various databases.
             </p>
             <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-              With hands-on experience from internships and participation in hackathons like SIH 2024 and HackIndia 2025, 
+              With hands-on experience from internships and participation in  HackIndia 2025, 
               I enjoy solving complex problems and turning innovative ideas into reality through clean, efficient code.
             </p>
             

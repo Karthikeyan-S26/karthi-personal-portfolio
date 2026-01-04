@@ -8,10 +8,8 @@ const ResumeAchievements = () => {
         Achievements
       </h3>
       <ul className="text-gray-700 text-xs space-y-1">
-        <li>• Participated in Smart India Hackathon (SIH) 2024</li>
-        <li>• Participated in HackIndia 2025</li>
-        <li>• Completed multiple web development internships</li>
-        <li>• Strong foundation in multiple programming languages</li>
+        <li>1. Published a paper and mini-project on the topic "A Sustainable Heart-to-Light Conversion System for Emergency Lighting"</li>
+        <li>2. Active participant in technical workshops and skill-development programs</li>
       </ul>
     </section>
   );
