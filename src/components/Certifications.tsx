@@ -7,55 +7,55 @@ const Certifications = () => {
       title: "Front End Web Developer Certification",
       issuer: "Infosys Springboard",
       date: "May 30, 2025",
-      image: "/lovable-uploads/infosys-certificate.jpg"
+      image: "/lovable-uploads/image-1767538904014.jpeg"
     },
     {
       title: "Full Stack Web Development Internship",
       issuer: "Media Wave Technologies",
       date: "June 2-18, 2025",
-      image: "/lovable-uploads/media-wave-certificate.jpg"
+      image: "/lovable-uploads/image-1767538849219.jpeg"
     },
     {
       title: "HackIndia 2025",
       issuer: "Certificate of Participation",
       date: "2025",
-      image: "/lovable-uploads/hackindia-certificate.jpg"
+      image: "/lovable-uploads/image-1767538898949.jpeg"
     },
     {
       title: "Core JAVA Course",
       issuer: "Kongunadu College of Engineering",
       date: "Sep 23-28, 2024",
-      image: "/lovable-uploads/java-certificate.jpg"
+      image: "/lovable-uploads/image-1767538880004.jpeg"
     },
     {
       title: "Industrial Visit - Software Development",
       issuer: "Techvolt Software Pvt.Ltd",
       date: "Aug 28, 2024",
-      image: "/lovable-uploads/techvolt-certificate.jpg"
+      image: "/lovable-uploads/image-1767538893927.jpeg"
     },
     {
       title: "Full Stack Development Workshop",
       issuer: "Nithra Consultancy Services",
       date: "Aug 21, 2025",
-      image: "/lovable-uploads/nithra-certificate.jpg"
+      image: "/lovable-uploads/image-1767538868646.jpeg"
     },
     {
       title: "Full Stack Development Workshop",
       issuer: "Abservetech",
       date: "Jan 28, 2025",
-      image: "/lovable-uploads/abservetech-certificate.jpg"
+      image: "/lovable-uploads/image-1767538874392.jpeg"
     },
     {
       title: "Conceptual Carnival - NEXOVATE '24",
       issuer: "Kongunadu College of Engineering",
       date: "Mar 8, 2024",
-      image: "/lovable-uploads/nexovate-certificate.jpg"
+      image: "/lovable-uploads/image-1767538889388.jpeg"
     },
     {
       title: "PAPERENZA Technical Symposium",
       issuer: "Annapoorana Engineering College",
       date: "Oct 8, 2024",
-      image: "/lovable-uploads/paperenza-certificate.jpg"
+      image: "/lovable-uploads/image-1767538884648.jpeg"
     }
   ];
 
