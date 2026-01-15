@@ -13,7 +13,7 @@ const ResumeSidebar = () => (
   <div className="w-full md:w-80 flex-shrink-0 bg-gray-700 text-white">
     <div className="p-8 text-center">
       <img 
-        src="/lovable-uploads/Profile (1).jpg" 
+        src="/Uploads/Profile (1).jpg" 
         alt="Karthikeyan S"
         className="w-32 h-32 rounded-full object-cover border-4 border-white mx-auto mb-4"
         style={{ objectPosition: "center center" }}

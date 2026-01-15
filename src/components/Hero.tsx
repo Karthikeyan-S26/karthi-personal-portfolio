@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="mb-8 flex justify-center">
           <div className="relative">
             <img 
-              src="/lovable-uploads/Profile (1).jpg" 
+              src="/Uploads/Profile (1).jpg" 
               alt="Karthikeyan S"
               className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover shadow-xl border-4 border-white"
               style={{ objectPosition: 'center center' }}
