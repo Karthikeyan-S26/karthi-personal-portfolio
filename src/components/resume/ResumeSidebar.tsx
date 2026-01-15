@@ -54,8 +54,8 @@ const ResumeSidebar = () => (
         </div>
         <div>
           <h4 className="font-bold">Higher Secondary (HSC)</h4>
-          <p className="text-sm text-gray-300">SCTV Higher Secondary School</p>
-          <p className="text-sm text-gray-400">67%</p>
+          <p className="text-sm text-gray-300">KSV Higher Secondary School</p>
+          <p className="text-sm text-gray-400">87%</p>
         </div>
         <div>
           <h4 className="font-bold">Secondary (SSLC)</h4>

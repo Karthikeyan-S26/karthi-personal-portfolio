@@ -7,7 +7,7 @@ const ResumeInternships = () => (
     <div className="space-y-6">
       <div className="border-l-4 border-blue-600 pl-4">
         <h4 className="text-lg font-semibold text-gray-900">Web Development Intern</h4>
-        <p className="text-gray-600 text-sm mb-2">Radix Wave Technologies (SSM) OOTY - 18/06/2025</p>
+        <p className="text-gray-600 text-sm mb-2">Media Wave Technologies - June 18, 2025</p>
         <ul className="text-gray-700 text-sm space-y-1">
           <li>• Completed internship focused on web development with HTML, JavaScript</li>
           <li>• Worked on UI components from validation and basic client-side logic</li>
@@ -15,8 +15,8 @@ const ResumeInternships = () => (
         </ul>
       </div>
       <div className="border-l-4 border-blue-600 pl-4">
-        <h4 className="text-lg font-semibold text-gray-900">Front End Development Intern (Virtual)</h4>
-        <p className="text-gray-600 text-sm mb-2">CodSoft</p>
+        <h4 className="text-lg font-semibold text-gray-900">Front End Development Intern</h4>
+        <p className="text-gray-600 text-sm mb-2">Micro IT - Virtual</p>
         <ul className="text-gray-700 text-sm space-y-1">
           <li>• Built interactive front-end interfaces following UI/UX principles</li>
           <li>• Improved responsiveness and user experience of web applications</li>

@@ -60,8 +60,8 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">Higher Secondary (HSC)</h4>
-                  <p className="text-blue-100 text-sm">SCTV Higher Secondary School</p>
-                  <p className="text-blue-200 text-xs md:text-sm">67%</p>
+                  <p className="text-blue-100 text-sm">KSV Higher Secondary School</p>
+                  <p className="text-blue-200 text-xs md:text-sm">87%</p>
                 </div>
               </div>
             </div>
@@ -74,12 +74,12 @@ const About = () => {
               <div className="space-y-3 md:space-y-4">
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">Web Development Intern</h4>
-                  <p className="text-green-100 text-sm">Radix Wave Technologies</p>
+                  <p className="text-green-100 text-sm">Media Wave Technologies</p>
                   <p className="text-green-200 text-xs md:text-sm">June 18, 2025</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">Front End Development Intern</h4>
-                  <p className="text-green-100 text-sm">CodSoft</p>
+                  <p className="text-green-100 text-sm">Micro IT</p>
                   <p className="text-green-200 text-xs md:text-sm">Virtual</p>
                 </div>
               </div>
