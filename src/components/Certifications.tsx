@@ -5,6 +5,18 @@ const Certifications = () => {
   const [selectedCert, setSelectedCert] = useState<string | null>(null);
   const certificates = [
     {
+      title: "Sri Eshwar THIRAN 2026 - AI Agentathon",
+      issuer: "Sri Eshwar College of Engineering",
+      date: "Feb 4-6, 2026",
+      image: "/Uploads/image-1770657117081.jpeg"
+    },
+    {
+      title: "INNOHACK 2026 - Cyber Security Track",
+      issuer: "VIT Vellore",
+      date: "Jan 20-21, 2026",
+      image: "/Uploads/image-1770657149788.jpeg"
+    },
+    {
       title: "Front End Web Developer Certification",
       issuer: "Infosys Springboard",
       date: "May 30, 2025",
