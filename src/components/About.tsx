@@ -12,32 +12,33 @@ const About = () => {
           </h2>
           <div className="w-20 md:w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 lg:order-1">
             <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-              I'm Karthikeyan S, a passionate Front End Developer currently pursuing B.Tech in Information Technology 
-              at Kongunadu College of Engineering and Technology. I specialize in creating responsive, user-friendly web applications 
-              using modern technologies like HTML, CSS, JavaScript, and React.
+              I'm Karthikeyan S, Aspiring MERN Stack Developer with hands-on experience in building responsive web
+              applications using MongoDB, Express.js, React.js, and Node.js. Strong in JavaScript,
+              UI/UX design, and problem solving, with project experience in developing real-world
+              applications. Passionate about learning new technologies and contributing to scalable solutions.
             </p>
             <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-              With hands-on experience from internships and participation in HackIndia 2025, 
+              With hands-on experience from internships and participation in HackIndia 2025,
               I enjoy solving complex problems and turning innovative ideas into reality through clean, efficient code.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               <div className="text-center p-4 md:p-6 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors">
                 <Code className="w-6 md:w-8 h-6 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
                 <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">Clean Code</h3>
                 <p className="text-xs md:text-sm text-muted-foreground">Writing maintainable and efficient code</p>
               </div>
-              
+
               <div className="text-center p-4 md:p-6 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors">
                 <Lightbulb className="w-6 md:w-8 h-6 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
                 <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">Innovation</h3>
                 <p className="text-xs md:text-sm text-muted-foreground">Always learning new technologies</p>
               </div>
-              
+
               <div className="text-center p-4 md:p-6 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors">
                 <Target className="w-6 md:w-8 h-6 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
                 <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">Results</h3>
@@ -45,7 +46,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="space-y-4 md:space-y-6 order-1 lg:order-2">
             <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 md:p-8 text-white">
               <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -56,7 +57,7 @@ const About = () => {
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">B.Tech Information Technology</h4>
                   <p className="text-blue-100 text-sm">Kongunadu College of Engineering and Technology</p>
-                  <p className="text-blue-200 text-xs md:text-sm">2023 – 2027 | CGPA: 8.0</p>
+                  <p className="text-blue-200 text-xs md:text-sm">2023 – 2027 | CGPA: 7.8</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm md:text-base">Higher Secondary (HSC)</h4>
@@ -65,7 +66,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 md:p-8 text-white">
               <div className="flex items-center gap-3 mb-4 md:mb-6">
                 <Briefcase className="w-5 md:w-6 h-5 md:h-6" />
