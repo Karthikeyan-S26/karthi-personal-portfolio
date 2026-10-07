@@ -1,5 +1,6 @@
 
 import React from 'react';
+import antigravityLogo from '@/assets/antigravity-logo.png.asset.json';
 
 const Skills = () => {
   const skillCategories = [
