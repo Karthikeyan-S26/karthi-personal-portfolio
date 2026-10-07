@@ -1,6 +1,5 @@
 
 import React from 'react';
-import antigravityLogo from '@/assets/antigravity-logo.png.asset.json';
 
 const Skills = () => {
   const skillCategories = [
@@ -43,7 +42,7 @@ const Skills = () => {
         { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
         { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-        { name: "Antigravity", logo: antigravityLogo.url }
+        { name: "Antigravity", logo: "/logos/antigravity.png" }
       ]
     }
   ];
