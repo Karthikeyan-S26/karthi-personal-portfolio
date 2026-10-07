@@ -4,6 +4,21 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
+/* Scoped palette preserves the certificate section's existing dark appearance. */
+.certificate-showcase {
+  --background: 221 39% 11%;
+  --foreground: 0 0% 100%;
+  --card: 215 28% 17%;
+  --card-foreground: 0 0% 100%;
+  --primary: 213 94% 68%;
+  --primary-foreground: 221 39% 11%;
+  --secondary: 215 28% 22%;
+  --secondary-foreground: 0 0% 100%;
+  --muted-foreground: 216 12% 72%;
+  --border: 215 20% 32%;
+  --ring: 213 94% 68%;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
