@@ -20,8 +20,16 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      '',
+      formData.message,
+    ].join('\n');
+    const mailto = `mailto:karthisenthil026@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
+
+    toast.info('Opening your email app with your message ready to send.');
+    window.location.href = mailto;
   };
 
   return (
