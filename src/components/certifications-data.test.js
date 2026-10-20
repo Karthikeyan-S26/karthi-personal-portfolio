@@ -19,6 +19,13 @@ describe('Certificate showcase rules', () => {
     expect(certificates.find(c => c.title.includes('Core JAVA'))?.image).toBe('/Uploads/image-1767538874392.jpeg');
     expect(certificates.find(c => c.issuer === 'Abservetech')?.image).toBe('/Uploads/image-1767538880004.jpeg');
   });
+  test('uses deployable site paths for certificates that were broken on Netlify', () => {
+    expect(certificates.find(c => c.title.includes('Thooral Hackathon'))?.image).toBe('/Uploads/certificate-thooral-2026.png');
+    expect(certificates.find(c => c.title === 'HackIndia 2026')?.image).toBe('/Uploads/certificate-hackindia-2026.png');
+    expect(certificates.find(c => c.title.includes('THIRAN 2025'))?.image).toBe('/Uploads/certificate-thiran-workshop-2025.png');
+    expect(certificates.find(c => c.title.includes('Tech Flare'))?.image).toBe('/Uploads/certificate-tech-flare-2025.png');
+    expect(certificates.find(c => c.issuer.includes('Micro IT'))?.image).toBe('/Uploads/certificate-micro-it.png');
+  });
   test('sorts precisely dated certificates in either direction', () => {
     expect(getCertificates('All', 'oldest')[0].endDate).toBe('2024-03-08');
     expect(getCertificates('All', 'newest')[0].endDate).toBe('2026-02-14');
